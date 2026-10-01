@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Data Science Visual Engine</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js for live, interactive mobile visualizers -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="mobile-container">
+    <header>
+      <div class="header-top">
+        <span class="badge" id="module-badge">Track: Foundations</span>
+        <span class="badge xp-badge" id="xp-counter">⚡ 120 XP</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="nav-header">
+        <button id="day-select-btn" class="day-dropdown-btn">Day 1: Regression Dynamics ▾</button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="pill-nav">
+      <button class="pill active" data-tab="visual">👁️ Visual Lab</button>
+      <button class="pill" data-tab="theory">🧠 Deep Dive</button>
+      <button class="pill" data-tab="code">💻 Code Lab</button>
+      <button class="pill" data-tab="challenge">⚡ Challenge</button>
+    </nav>
+
+    <!-- Content Area -->
+    <main>
+      <!-- TAB 1: VISUAL LAB -->
+      <section id="tab-visual" class="tab-content active">
+        <div class="card visual-card">
+          <div class="visual-header">
+            <h3 id="visual-title">Interactive Model Play</h3>
+            <p id="visual-desc">Tweak parameters below to see the mathematical model adjust live.</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="liveChart"></canvas>
+          </div>
+          <div class="controls-panel" id="dynamic-controls">
+            <!-- Injected by app.js depending on lesson -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: DEEP DIVE THEORY -->
+      <section id="tab-theory" class="tab-content">
+        <div class="card theory-card">
+          <h2 id="theory-title">Title</h2>
+          <div class="section-divider"></div>
+          <div class="concept-block">
+            <h4>💡 Intuition & Real-World Mechanism</h4>
+            <p id="theory-intuition"></p>
+          </div>
+          <div class="concept-block">
+            <h4>🏢 How Industry Uses This</h4>
+            <p id="theory-industry"></p>
+          </div>
+          <div class="concept-block pitfall-block">
+            <h4>⚠️ The Costly Rookie Mistake</h4>
+            <p id="theory-pitfall"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: CODE LAB -->
+      <section id="tab-code" class="tab-content">
+        <div class="card code-card">
+          <div class="code-title-row">
+            <span class="lang-tag">Python (Production Scikit/Pandas)</span>
+            <button id="copy-code-btn" class="action-btn">Copy</button>
+          </div>
+          <pre><code id="code-display"></code></pre>
+          <div class="output-preview">
+            <div class="output-header">Interactive Terminal Output</div>
+            <pre class="terminal-text" id="code-output"></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: CHALLENGE QUIZ -->
+      <section id="tab-challenge" class="tab-content">
+        <div class="card challenge-card">
+          <h3>Scenario Evaluation</h3>
+          <p id="quiz-scenario" class="scenario-text"></p>
+          <div id="quiz-options-container" class="options-column"></div>
+          <div id="quiz-explanation" class="explanation-box hidden"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Controls -->
+    <footer>
+      <button id="prev-btn" class="nav-arrow">‹</button>
+      <button id="next-btn" class="next-action">Next Topic ➔</button>
+    </footer>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
